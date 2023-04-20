@@ -21,7 +21,7 @@ botonEncriptar.addEventListener('click', (e) =>{
 
 botonDesencriptar.addEventListener('click', (e) =>{
     e.preventDefault();
-    if(textoEncriptador.value === ''){
+    if(textoEncriptador.value.trim() === ''){
         mostrarError();
         return;
     }
