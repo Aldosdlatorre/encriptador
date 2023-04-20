@@ -142,16 +142,14 @@ img{
     padding: 4rem;
     background-color: white;
     min-height: 60rem;
-    max-height: 60rem;
-    overflow: scroll;
+    overflow: hidden;
 }
 
-.texto::before{
-    content: "Texto Encriptado / Desencriptado";
-    position: absolute;
-    top: 5rem;
-    font-size: 2rem;
+.textoCampo{
+    word-wrap: break-word;
+    max-width: 100%;
 }
+
 
 .copiar{
     margin-top: 4rem;
