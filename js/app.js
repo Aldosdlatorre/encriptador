@@ -4,16 +4,17 @@ const textoEncriptador = document.querySelector('#textoEncriptador');
 const botonDesencriptar = document.querySelector('.botonDesencriptar');
 const textoCampo = document.querySelector('.textoCampo');
 const copiarBtn = document.querySelector('.copiar');
+const regex = /^[A-Za-z]+$/;
 
 
 // Event listeners
 botonEncriptar.addEventListener('click', (e) =>{
     e.preventDefault();
-    if(textoEncriptador.value === ''){
+    if(textoEncriptador.value.trim() === ''){
         mostrarError();
         return;
     }
-    let textoGuardado = textoEncriptador.value;
+    let textoGuardado = textoEncriptador.value.trim().toLowerCase();
     encriptar(textoGuardado);
     formulario.reset();
 });
@@ -21,9 +22,10 @@ botonEncriptar.addEventListener('click', (e) =>{
 botonDesencriptar.addEventListener('click', (e) =>{
     e.preventDefault();
     if(textoEncriptador.value === ''){
+        mostrarError();
         return;
     }
-    let textoGuardado = textoEncriptador.value;
+    let textoGuardado = textoEncriptador.value.trim().toLowerCase();
     desencriptar(textoGuardado);
     formulario.reset();
 });
@@ -31,7 +33,6 @@ botonDesencriptar.addEventListener('click', (e) =>{
 copiarBtn.addEventListener('click', () => {
     const texto = document.querySelector('.resultado').textContent;
     navigator.clipboard.writeText(texto);
-    console.log(texto);
     copiarBtn.textContent = 'Copiado!';
     copiarBtn.disabled = true;
     copiarBtn.classList.add('disabled');
