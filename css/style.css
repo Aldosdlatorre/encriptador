@@ -1,0 +1,185 @@
+/* Globales */
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Raleway", sans-serif;
+    background-color: #edf0f2;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2.6rem;
+}
+
+p{
+    font-size: 1.8rem;
+}
+
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+.contenido{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+    margin: 10rem auto;
+    gap: 10rem;
+}
+
+
+@media (min-width: 920px) { 
+    .contenido{
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 4rem;
+    }  
+}
+
+
+img{
+    display: block;
+    max-width: 100%;
+    width: 100%;
+}
+
+/* Heading */
+.heading{
+    text-align: center;
+    position: relative;
+}
+
+.heading::after{
+    content: "";
+    display: block;
+    width: 10rem;
+    height: 1rem;
+    border-radius: 1rem;
+    margin-top: 5rem;
+    background-color: #032d58;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: -2rem;
+}
+
+/* Encriptador */
+
+#textoEncriptador{
+    resize: none;
+    border: none;
+    width: 100%;
+    height: 40rem;
+    margin: 4rem 0;
+    padding: 1rem;
+}
+
+.aviso{
+    text-align: center;
+    padding: 1rem 0;
+    color: #969595;
+    letter-spacing: 5px;
+}
+
+.botones{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) { 
+    .botones{
+        flex-direction: row;
+    }
+}
+.boton{
+    padding: 1.8rem 10rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.botonEncriptar{
+    background-color: #032d58;
+    color: white;
+    transition: 300ms ease-in-out all;
+}
+
+.botonEncriptar:hover{
+    background-color: #011d38;
+}
+
+/* Texto Encriptado */
+
+.texto{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    box-shadow: -1px 1px 13px -1px rgba(169, 169, 169, 0.75);
+    text-align: center;
+    gap: 2rem;
+    padding: 4rem;
+    background-color: white;
+    min-height: 60rem;
+}
+
+.texto::before{
+    content: "Texto Encriptado / Desencriptado";
+    position: absolute;
+    top: 5rem;
+    font-size: 2rem;
+}
+
+.copiar{
+    margin-top: 4rem;
+    padding: 1rem 6rem;
+    border-radius: 1rem;
+    border: 1px solid #e1e1e1;
+    background-color: #032d58;
+    color: white;
+    cursor: pointer;
+    box-shadow: -1px 1px 13px -1px rgba(169, 169, 169, 0.75);
+    transition: 300ms ease-in all;
+    display: none;
+}
+
+.error{
+    padding: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: red;
+    width: 50%;
+    margin: 0 auto;
+    color: white;
+    border-radius: 1rem;
+}
+
+.disabled{
+    background-color: #888888;
+}
+
+.textoCampo img{
+    width: 20rem;
+    margin: 0 auto;
+}
