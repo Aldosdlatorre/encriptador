@@ -142,6 +142,8 @@ img{
     padding: 4rem;
     background-color: white;
     min-height: 60rem;
+    max-height: 60rem;
+    overflow: scroll;
 }
 
 .texto::before{
